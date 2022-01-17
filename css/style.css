@@ -7,17 +7,8 @@
 	font-family: "Arial", "sans-serif";
 }
 
-.line {
-	border-radius: 10px;
-	margin: 10px auto;
-	height: 10px;
-	width: 50%;
-	background-color: var(--color1);
-}
-
-header, footer {
-	padding: 100px 0px;
-
+header, .items, .cards {
+  
 	background: var(--color1);
 	background: -webkit-linear-gradient(45deg, var(--color1) 0%, var(--color2) 100%);
 	background: -moz-linear-gradient(45deg, var(--color1) 0%, var(--color2) 100%);
@@ -26,11 +17,30 @@ header, footer {
 	background-size: contain;
 }
 
-.title {
-	color: #fff;
+.header-main {
+   padding: 100px 0px;
 }
 
-.description {
+.parallax-img {
+  height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://source.unsplash.com/random/1920x1080');
+}
+
+.sign-up, .sign-in {
+  border: 3px solid var(--color1);
+  display: block;
+}
+
+.sign-up:hover, .sign-in:hover{
+  background-color: #1C37B6;
+  cursor:pointer;
+}
+
+.title, .description {
 	color: #fff;
 }
 
@@ -39,44 +49,48 @@ header, footer {
 	display: block;
 	margin: 0 auto;
 	max-width: 200px;
-	padding: 10px 30px;
+	padding: 1px 30px;
 	color: var(--bs-white);
 	background-color: var(--color2);
 }
 
 .btn-more-info:hover {
 	background-color: var(--color1);
+  color: var(--bs-black);
 }
 
 .about {
 	padding: 50px 0px;
-
 	background-color: #202c4c;
 }
 
 .color-box {
-	margin: 10px 0px;
+  height: 100%;
 	padding: 20px;
 	border: 1px solid var(--color1);
 	border-radius: 10%;
 }
 
 .items {
-	padding: 100px 0px;
-
-	background-color: #94b384;
+  padding: 50px 0px;
 }
 
 .item {
-	padding: 50px 10px;
+  position: relative;
 	margin: 0px 10px;
-	border-radius: 10px;
+	border-radius: 10%;
+	background-color: #202c4c;
+}
 
-	background-color: var(--color2);
+.item:hover {
+  top: 5px;
+  left:5px;
+  box-shadow: 10px 10px 2px 1px rgba(255, 0, 50, 0.2);
 }
 
 .accordion-items {
 	padding: 50px 0px;
+  background-color: #202c4c;
 }
 
 .accordion-button:not(.collapsed) {
@@ -88,6 +102,41 @@ header, footer {
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
+.cards {
+  padding: 50px 0px;
+}
+
+.card {
+   border-radius: 0 10% 0 10%;
+}
+
+.card > .img-wrapper {
+  border-radius: 0 10% 0 0;
+}
+
+.img-wrapper {  
+  width: 100%;
+  overflow: hidden;
+}
+
+.img-wrapper__item {
+  min-height: 100%;
+  height: auto;
+  transition: 0.3s;
+  border-radius: 0 10% 0 0;
+}
+
+.img-wrapper__item:hover {
+  transform: scale(1.2);
+}
+
 footer {
-	padding: 50px 0px;
+	padding: 20px 0px;
+  background-color: #202c4c;
+}
+
+@media (max-width: 992px) {
+  .item {
+    margin: 10px 10px
+  }
 }
